@@ -1,17 +1,11 @@
 package main
 
 import (
-	"flag"
-	"math/rand"
-	"net"
-	"net/rpc"
-	"os"
-	"time"
 	"uk.ac.bris.cs/gameoflife/stubs"
 	"uk.ac.bris.cs/gameoflife/util"
 )
 
-type GameofLifeOperations struct{}
+/*type GameofLifeOperations struct{}
 
 //var alivecells int
 
@@ -65,17 +59,10 @@ func main() {
 	rpc.Accept(listener)
 }
 
-/* Super-Secret `reversing a string' method we can't allow clients to see.
-func ReverseString(s string, i int) string {
-	time.Sleep(time.Duration(rand.Intn(i))* time.Second)
-	runes := []rune(s)
-	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
-	}
-	return string(runes)
 } */
+type calculate struct{}
 
-func calculateNextState(p stubs.Params, world [][]byte) [][]byte {
+func (s *calculate) calculateNextState(p stubs.Params, world [][]byte) [][]byte {
 
 	//making a separate world to check without disturbing the actual world
 	testerworld := make([][]byte, len(world))
@@ -114,7 +101,8 @@ func calculateNextState(p stubs.Params, world [][]byte) [][]byte {
 
 	return testerworld
 }
-func calculateAliveCells(p stubs.Params, world [][]byte) []util.Cell {
+
+func (s *calculate) calculateAlive(p stubs.Params, world [][]byte) []util.Cell {
 
 	var alivecells []util.Cell
 

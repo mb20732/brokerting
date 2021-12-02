@@ -1,0 +1,9 @@
+goos: linux
+goarch: amd64
+pkg: uk.ac.bris.cs/gameoflife
+BenchmarkGol/512x512x100-1-12         	       1	3879131575 ns/op
+BenchmarkGol/512x512x100-1-12         	       1	3790183514 ns/op
+BenchmarkGol/512x512x100-1-12         	       1	3905198403 ns/op
+BenchmarkGol/512x512x100-1-12         	       1	3952942479 ns/op
+BenchmarkGol/512x512x100-1-12         	       1	3994758773 ns/op
+ok  	uk.ac.bris.cs/gameoflife	39.223s

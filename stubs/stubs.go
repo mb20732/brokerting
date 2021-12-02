@@ -6,6 +6,8 @@ var Processsor = "GameofLifeOperations.Process"
 var GetAlive = "GameofLifeOperations.GetAlivers"
 var CancelServer = "GameofLifeOperations.CancelServer"
 var GetCellsFlipped = "GameofLifeOperations.GetCellsFlipped"
+var CalculateNext = "calculate.calculateNext"
+var CalculateAlive = "calculate.calculateAlive"
 
 type Params struct {
 	Turns       int
